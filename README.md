@@ -2,7 +2,7 @@
 
 手机优先的训练与饮食执行面板。打开默认进入今天；不登录、不接入后端、不请求远程 API。
 
-**当前交付：源码已实现；44 项 Node 检查和 9 项隔离界面检查通过。真实安装、独立窗口、原生离线重开与浏览器重启后的存储仍待验收，不能宣称全部 DoD 已完成。** 详见 `docs/ACCEPTANCE.md`。
+**当前交付：已部署到 GitHub Pages；44 项 Node 检查、9 项隔离界面检查和 21 项真实 Chrome 浏览器检查通过（含浏览器进程重启后的离线重开与持久化）。实体手机安装、主屏图标独立窗口与飞行模式重开仍待人工验收，不能宣称全部 DoD 已完成。** 详见 `docs/ACCEPTANCE.md`。
 
 ## 本地运行
 
@@ -30,9 +30,9 @@ Windows 中也可将上面的 `python` 替换为 `py`。不要直接双击 `inde
 
 ## 部署到 GitHub Pages
 
-本次没有检索到已连接的 Fitness 仓库，所以没有远程提交、创建仓库或上线操作。
+已上线：`https://xxtxx-txx.github.io/fitness-20w-pwa/`（独立仓库 `xxtxx-txx/fitness-20w-pwa`，`main` 分支 / 根目录）。线上应用文件经 SHA-256 与仓库提交逐一比对一致。
 
-将本工程文件放到**你已授权用于此项目**的仓库，保留根目录中的 `index.html`、`sw.js`、`manifest.webmanifest`、所有 JS / CSS 和 `icons/`。在仓库设置中选择：
+更新时保留根目录中的 `index.html`、`sw.js`、`manifest.webmanifest`、所有 JS / CSS 和 `icons/`，提交到 `main` 后 Pages 会自动重建。对应的仓库设置：
 
 ```text
 Settings → Pages
@@ -42,7 +42,7 @@ Folder: / (root)
 Save
 ```
 
-等待 GitHub Pages 发布成功，再使用它提供的 HTTPS 地址。仓库子路径受支持，所有核心资源、Manifest、Service Worker 的路径都是相对于应用目录。不要为上线擅自将私人仓库改成公开。
+等待 GitHub Pages 发布成功，再使用它提供的 HTTPS 地址。仓库子路径受支持，所有核心资源、Manifest、Service Worker 的路径都是相对于应用目录。本仓库的公开状态来自使用者的明确授权；免费计划下改回私有会使 Pages 下线，必须重新获得确认。
 
 也可以只生成和上传发布文件：
 

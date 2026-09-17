@@ -2,11 +2,11 @@
 
 ## 状态
 
-**源码已实现并可静态发布；原生 PWA 验收未完成。不能标记整个 AWC 为 DONE。**
+**已部署到 GitHub Pages，并在真实 Chrome 152 上实际执行通过 21 项原生浏览器检查。实体手机安装与飞行模式重开仍未实测，不能标记整个 AWC 为 DONE。**
 
 工程：`fitness-20w-pwa/`。无后端、无登录、无云服务或远程 API。运行使用静态 HTML、CSS、ES module JavaScript。
 
-已完成 44 项 Node 检查、9 项隔离 UI 检查。原生浏览器端到端尝试的 21 个场景均被环境导航策略阻塞；没有将这些阻塞记录计为通过。
+已完成 44 项 Node 检查、9 项隔离 UI 检查。此前被托管浏览器策略阻塞的 21 项原生浏览器场景，已在本机 Chrome 上全部实际执行并通过，包含服务器停止 + 浏览器进程重启后的离线重开。
 
 ## 测试环境与证据边界
 
@@ -18,7 +18,7 @@ Service Worker 单测使用 Cache Storage 和生命周期事件替身，验证�
 
 静态服务器已真实启动，并通过 Node HTTP 请求测试根路径、`/fitness/` 子路径、JS MIME、Manifest、图标和应用壳资源。Manifest JSON、图标尺寸及相对路径静态检查通过。
 
-原生浏览器访问 localhost 返回 `net::ERR_BLOCKED_BY_ADMINISTRATOR`。尝试安装 Playwright Chromium 时下载域名 DNS 返回 `EAI_AGAIN`。没有修改或绕过托管浏览器策略。
+本机 Chrome 可用后，`tests/browser_smoke.py` 已在真实 Chrome 152 上完整执行：21/21 通过，应用以 `/fitness/` 子路径提供，含离线重开（静态服务器已停止、浏览器进程重启）。此前的环境阻塞记录保留为历史记录，不再代表当前状态。早先的 3 处失败均来自测试夹具假设而非应用缺陷——Playwright 的隐身上下文会报告 `in-incognito` 安装错误，`page.clock` 会抹掉 `performance.getEntriesByType('navigation')`——已仅在 `tests/browser_smoke.py` 内修正，应用代码未改。
 
 证据：
 
@@ -26,14 +26,17 @@ Service Worker 单测使用 Cache Storage 和生命周期事件替身，验证�
 - `preview-results/results.json`：9/9，明确标注内存替身与 NOT_TESTED 的原生项目。
 - `preview-results/*.png`：实际 UI 渲染截图，不是效果图。
 - `browser-results/blocked-e2e-attempt.json`：21 个环境阻塞场景。
-- `../tests/browser_smoke.py`：待在正常浏览器环境执行的完整验收脚本。
+- `browser-results/results.json`：21 项真实 Chrome 检查（本地 `/fitness/` 子路径）。
+- `browser-results/*.png`：真实 Chrome 渲染截图，含服务器停止 + 浏览器重启后的 `offline-restart-390.png`。
+- `browser-results/live-verification.json`：线上地址的文件哈希、Manifest、Service Worker、installability 与离线复测结果。
+- `../tests/browser_smoke.py`：可复跑的完整浏览器验收脚本。
 
 ## 原始验收项目映射
 
 | 项目 | 结果 | 证据 / 边界 |
 |---|---|---|
-| AT-01 安装资格 | 部分验证 | Manifest 必填项、PNG 尺寸与相对作用域检查通过；浏览器安装资格诊断及实际安装未通过实测。 |
-| AT-02 独立窗口 | 待测 | 已设 `display: standalone`；真实桌面图标启动未实测。 |
+| AT-01 安装资格 | 通过（自动化） | 线上 Manifest 无错误、`display: standalone`、图标 192/512/512；真实 Chrome `Page.getInstallabilityErrors` 返回空列表。实体手机安装仍待人工验收。 |
+| AT-02 独立窗口 | 待人工验收 | 已设 `display: standalone`；主屏图标启动独立窗口未实测。 |
 | AT-03 默认本地 Today | 通过（自动化） | 本地自然日模型与隔离 UI 验证；UTC+8 跨日恢复。 |
 | AT-04 Week 1–20 | 通过（自动化） | 第 1 / 7 / 8 / 134 / 140 天、非周一开始、闰日、夏令时相关日期。 |
 | AT-05 周一 | 通过（自动化） | 力量 A；生米 200g，100g + 100g。 |
@@ -46,13 +49,13 @@ Service Worker 单测使用 Cache Storage 和生命周期事件替身，验证�
 | AT-12 早餐 | 通过（自动化） | 每天恰为 3 个鸡蛋、60g 燕麦、250ml 牛奶。 |
 | AT-13 午餐蛋白 | 通过（自动化） | 每天 400g 生鸡胸肉。 |
 | AT-14 晚餐蛋白 | 通过（自动化） | 每天 220g 生去皮去骨鸡腿肉。 |
-| AT-15 离线打开 | 待测 | SW 逻辑单测通过；真实断网关闭重开未通过实测。 |
-| AT-16 持久化 | 部分验证 | 存储适配器、多实例读写、失败不假报成功及 UI 交互通过；真实浏览器 / 已安装 App 重启待测。 |
+| AT-15 离线打开 | 通过（自动化） | 线上真实 Chrome：断网重载渲染一致，内容来自本作用域缓存；静态服务器停止 + 浏览器进程重启后仍可离线打开。实体手机飞行模式待人工验收。 |
+| AT-16 持久化 | 通过（自动化） | 线上真实 Chrome：离线重开保留完成记录，离线撤销 / 再次完成后重载仍保留。已安装 App / 实体手机重启待人工验收。 |
 | AT-17 无后端依赖 | 通过（静态 / 逻辑） | 核心文件无远程 URL、CDN、API 或云依赖；静态资源可完整提供。 |
 | AT-18 移动布局 | 通过（隔离 UI） | 320–1280px，无横向溢出；目视检查手机版。实体手机触感仍待使用确认。 |
 | AT-19 周期边界 | 通过（自动化） | 第 141 天为 Cycle Complete，week=null，保留历史，不自动重启。 |
 
-合计：**15 项自动化 / 静态验证通过；2 项部分验证；2 项待测。**
+合计：**18 项自动化验证通过（44 项 Node + 21 项真实 Chrome）；1 项待人工验收（AT-02 独立窗口）。实体手机安装与飞行模式重开不在自动化范围内。**
 
 “3 秒内理解今天全部安排”属于真实使用验收，本次没有把开发机渲染速度或截图可见性冒充用户理解耗时。
 
@@ -66,8 +69,14 @@ Service Worker 单测使用 Cache Storage 和生命周期事件替身，验证�
 
 ## 部署状态
 
-未部署；未检索到已连接的 Fitness 仓库。没有创建远程仓库，也没有修改任何现有项目。提供完整源码包和仅含运行文件的静态发布包。
+已部署。独立仓库 `xxtxx-txx/fitness-20w-pwa`（不含任何其他项目），GitHub Pages 使用 `main` 分支 / 根目录发布：
+
+```text
+https://xxtxx-txx.github.io/fitness-20w-pwa/
+```
+
+应用文件（`index.html`、JS、CSS、Manifest、`sw.js`、`icons/`）自提交 `c1fc0a850b5aa424da6b4853b785aa73744bc417` 起字节未变；线上文件经 SHA-256 与该提交逐一比对一致。Service Worker 作用域为 `https://xxtxx-txx.github.io/fitness-20w-pwa/`，缓存键为 `fitness-20w:https://xxtxx-txx.github.io/fitness-20w-pwa/:0.1.0`，仅作用于本应用子路径。仓库公开状态经使用者明确授权后设为 public。
 
 ## 剩余人工动作
 
-将工程交给 Codex / 豆包，按 `HANDOFF.md` 在可正常访问 localhost 的环境复测并部署至授权的 GitHub Pages 仓库；随后在手机首次设置日期、安装，从桌面图标启动并完成一次飞行模式重开检查。只有这些实际通过后，才关闭安装 / 离线 / 持久化验收并标记最终 DONE。
+在实体手机上打开上面的地址，首次设置开始日期，等待“离线已就绪”后安装到主屏，从桌面图标启动确认独立窗口，并完成一次飞行模式关闭 / 重开检查。只有这些实际通过后，才关闭 AT-02 与实体机安装 / 离线 / 持久化验收并标记最终 DONE。

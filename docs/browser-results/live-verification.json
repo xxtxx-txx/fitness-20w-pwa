@@ -1,0 +1,79 @@
+{
+  "base": "https://xxtxx-txx.github.io/fitness-20w-pwa/",
+  "sha256_match_with_commit": {
+    "index.html": true,
+    "styles.css": true,
+    "app.js": true,
+    "program.js": true,
+    "date-engine.js": true,
+    "state.js": true,
+    "manifest.webmanifest": true,
+    "sw.js": true,
+    "icons/icon-192.png": true,
+    "icons/icon-512.png": true,
+    "icons/maskable-512.png": true,
+    "icons/apple-touch-icon.png": true
+  },
+  "test_date": "2026-09-18",
+  "program_start": "2026-09-14",
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/152.0.0.0 Safari/537.36",
+  "service_worker": {
+    "scope": "https://xxtxx-txx.github.io/fitness-20w-pwa/",
+    "state": "activated",
+    "script": "https://xxtxx-txx.github.io/fitness-20w-pwa/sw.js",
+    "scope_matches_subpath": true,
+    "script_at_subpath": true
+  },
+  "cache_keys": [
+    "fitness-20w:https://xxtxx-txx.github.io/fitness-20w-pwa/:0.1.0"
+  ],
+  "cache_scope_prefix_only": true,
+  "precached_files": {
+    "index.html": true,
+    "styles.css": true,
+    "app.js": true,
+    "program.js": true,
+    "date-engine.js": true,
+    "state.js": true,
+    "manifest.webmanifest": true,
+    "sw.js": false,
+    "icons/icon-192.png": true,
+    "icons/icon-512.png": true,
+    "icons/maskable-512.png": true,
+    "icons/apple-touch-icon.png": true
+  },
+  "manifest": {
+    "errors": [],
+    "url": "https://xxtxx-txx.github.io/fitness-20w-pwa/manifest.webmanifest",
+    "display": "standalone",
+    "start_url": "./",
+    "scope": "./",
+    "id": "./",
+    "icons": [
+      "192x192",
+      "512x512",
+      "512x512"
+    ]
+  },
+  "installability_errors": [],
+  "online_render": {
+    "weekday_line": "9月18日 · 星期五",
+    "workout": "力量 C",
+    "rice": "午餐 |  | 400g 生鸡胸肉 |  | 100g 生米 | · | 蔬菜",
+    "completed": "今日已完成\n已保存到本机"
+  },
+  "no_external_or_error": {
+    "external_requests": [],
+    "console_or_page_errors": []
+  },
+  "offline_reload": {
+    "render_identical": true,
+    "completion_kept": true
+  },
+  "offline_browser_restart": {
+    "app_rendered": true,
+    "completion_kept": true,
+    "further_writes_persisted": true
+  },
+  "offline_navigation_requests": 20
+}
