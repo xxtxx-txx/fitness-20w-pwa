@@ -86,6 +86,16 @@ def run(chromium_path):
             page.wait_for_function('!!navigator.serviceWorker.controller')
             expect(page.locator('#offline-status')).to_contain_text('就绪')
 
+        @contextmanager
+        def persistent_app(profile_name):
+            # A persistent profile is not incognito, so Chromium can report real
+            # installability diagnostics instead of the 'in-incognito' error.
+            profile=Path(temporary)/profile_name
+            context=pw.chromium.launch_persistent_context(str(profile),**launch,**common)
+            page=context.pages[0];page.goto(url);page.wait_for_selector('#main h1')
+            try: yield page,context
+            finally: context.close()
+
         def setup():
             with app(seed=False) as (page,_):
                 expect(page.get_by_role('heading',name='从哪天开始？')).to_be_visible()
@@ -299,7 +309,7 @@ def run(chromium_path):
         record('Local UTC+8 midnight refreshes Today on resume',midnight)
 
         def manifest():
-            with app() as (page,context):
+            with persistent_app('installability-profile') as (page,context):
                 ready(page)
                 session=context.new_cdp_session(page)
                 manifest=session.send('Page.getAppManifest')
@@ -323,7 +333,8 @@ def run(chromium_path):
             for name in ['本周','设置','今天']: choose_view(page,name)
             assert errors==[],errors
             assert all(r.startswith(url) for r in requests),requests
-            metrics=page.evaluate('({navigation:performance.getEntriesByType("navigation")[0].duration, paint:performance.getEntriesByType("paint").map(e=>({name:e.name,startTime:e.startTime}))})')
+            # page.clock replaces the timeline, so the navigation entry may be absent here.
+            metrics=page.evaluate('({navigation:performance.getEntriesByType("navigation")[0]?.duration ?? null, paint:performance.getEntriesByType("paint").map(e=>({name:e.name,startTime:e.startTime}))})')
             context.close()
             return {'externalRequests':0,'consoleErrors':0,'timingLocalOnly':metrics}
         record('AT-17: zero external requests and no console-breaking errors',external_and_console)
@@ -339,8 +350,9 @@ def run(chromium_path):
                     page.evaluate('navigator.serviceWorker.ready.then(r=>r.update())')
                     expect(page.locator('#update-notice')).to_be_visible(timeout=15000)
                     assert any(k.endswith(':0.1.0') for k in page.evaluate('caches.keys()'))
-                    page.locator('#apply-update').click()
-                    page.wait_for_function("performance.getEntriesByType('navigation')[0].type === 'reload'",timeout=10000)
+                    # Applying an update must be a real reload, not an in-place DOM patch.
+                    with page.expect_event('framenavigated',timeout=15000):
+                        page.locator('#apply-update').click()
                     expect(page.locator('.completion-done')).to_be_visible()
                     page.wait_for_function("caches.keys().then(ks=>ks.some(k=>k.endsWith(':0.1.1')) && !ks.some(k=>k.endsWith(':0.1.0')))")
                     assert 'unrelated-app-cache' in page.evaluate('caches.keys()')

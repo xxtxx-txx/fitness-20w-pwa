@@ -1,0 +1,173 @@
+{
+  "checks": [
+    {
+      "name": "First launch → configured local Today; Friday / Week 1",
+      "status": "PASS",
+      "seconds": 0.819,
+      "detail": null
+    },
+    {
+      "name": "AT-03/05–14: rendered weekday workouts and nutrition",
+      "status": "PASS",
+      "seconds": 0.544,
+      "detail": "All 7 weekdays; exact breakfast and protein quantities"
+    },
+    {
+      "name": "AT-16: completion persists through reload, tab close and Week view",
+      "status": "PASS",
+      "seconds": 0.824,
+      "detail": null
+    },
+    {
+      "name": "Undo requires a deliberate confirmation, cancel is non-destructive",
+      "status": "PASS",
+      "seconds": 0.729,
+      "detail": null
+    },
+    {
+      "name": "Manual browsing never changes Today; future check-off is unavailable",
+      "status": "PASS",
+      "seconds": 0.567,
+      "detail": null
+    },
+    {
+      "name": "AT-10: Saturday choices, persistence and all phase transitions",
+      "status": "PASS",
+      "seconds": 1.037,
+      "detail": null
+    },
+    {
+      "name": "Recovery weeks visibly distinguish normal-reference sets from targets",
+      "status": "PASS",
+      "seconds": 0.566,
+      "detail": null
+    },
+    {
+      "name": "AT-04/19: before start, day 140, day 141; history preserved",
+      "status": "PASS",
+      "seconds": 0.94,
+      "detail": null
+    },
+    {
+      "name": "AT-18: 320–1280px, all views; no overflow, >=44px touch targets",
+      "status": "PASS",
+      "seconds": 4.604,
+      "detail": [
+        "320:今天",
+        "320:本周",
+        "320:设置",
+        "360:今天",
+        "360:本周",
+        "360:设置",
+        "390:今天",
+        "390:本周",
+        "390:设置",
+        "412:今天",
+        "412:本周",
+        "412:设置",
+        "768:今天",
+        "768:本周",
+        "768:设置",
+        "1280:今天",
+        "1280:本周",
+        "1280:设置"
+      ]
+    },
+    {
+      "name": "Backup export contains exact persisted configuration and records",
+      "status": "PASS",
+      "seconds": 0.822,
+      "detail": {
+        "file": "fitness-backup-2026-09-18.json",
+        "records": 1
+      }
+    },
+    {
+      "name": "Import rejects malformed data; cancellation preserves data; valid restore works",
+      "status": "PASS",
+      "seconds": 0.788,
+      "detail": null
+    },
+    {
+      "name": "Start date change and reset confirmations preserve unrelated configuration",
+      "status": "PASS",
+      "seconds": 1.061,
+      "detail": null
+    },
+    {
+      "name": "Corrupt storage is not overwritten; raw export and backup recovery work",
+      "status": "PASS",
+      "seconds": 0.758,
+      "detail": null
+    },
+    {
+      "name": "Storage failure does not falsely mark Today completed",
+      "status": "PASS",
+      "seconds": 0.451,
+      "detail": null
+    },
+    {
+      "name": "Cross-tab storage events refresh completion state",
+      "status": "PASS",
+      "seconds": 0.618,
+      "detail": null
+    },
+    {
+      "name": "Local UTC+8 midnight refreshes Today on resume",
+      "status": "PASS",
+      "seconds": 0.45,
+      "detail": null
+    },
+    {
+      "name": "AT-01: Chromium installability diagnostics; SW scope under /fitness/",
+      "status": "PASS",
+      "seconds": 1.215,
+      "detail": {
+        "manifestErrors": [],
+        "installabilityErrors": [],
+        "scope": "http://127.0.0.1:54583/fitness/",
+        "browser": "152.0.7977.83",
+        "note": "Native device installation / standalone launch still require a phone test."
+      }
+    },
+    {
+      "name": "AT-17: zero external requests and no console-breaking errors",
+      "status": "PASS",
+      "seconds": 0.483,
+      "detail": {
+        "externalRequests": 0,
+        "consoleErrors": 0,
+        "timingLocalOnly": {
+          "navigation": null,
+          "paint": []
+        }
+      }
+    },
+    {
+      "name": "Versioned cache update is explicit and preserves local records / other apps",
+      "status": "PASS",
+      "seconds": 3.35,
+      "detail": "Waiting update → explicit activation → coherent reload; records and foreign cache retained"
+    },
+    {
+      "name": "Failed precache update leaves the previous offline app available",
+      "status": "PASS",
+      "seconds": 0.482,
+      "detail": "Deliberately missing precache asset does not replace the working app"
+    },
+    {
+      "name": "AT-15/16: full browser restart offline, with static server stopped",
+      "status": "PASS",
+      "seconds": 2.993,
+      "detail": "Browser process restarted with its persistent profile, actual server stopped, network offline; plans + saved completion + further writes all passed"
+    }
+  ],
+  "passed": 21,
+  "failed": 0,
+  "not_tested": [
+    "Native Android install and launcher-icon standalone launch",
+    "Native iOS Safari home-screen launch",
+    "Real phone airplane-mode reopen",
+    "User comprehension within 3 seconds"
+  ]
+}
