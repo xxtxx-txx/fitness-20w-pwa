@@ -1,0 +1,140 @@
+{
+  "checks": [
+    {
+      "name": "First launch → configured local Today; Friday / Week 1",
+      "status": "BLOCKED",
+      "seconds": 0.182,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "AT-03/05–14: rendered weekday workouts and nutrition",
+      "status": "BLOCKED",
+      "seconds": 0.088,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "AT-16: completion persists through reload, tab close and Week view",
+      "status": "BLOCKED",
+      "seconds": 0.088,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "Undo requires a deliberate confirmation, cancel is non-destructive",
+      "status": "BLOCKED",
+      "seconds": 0.097,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "Manual browsing never changes Today; future check-off is unavailable",
+      "status": "BLOCKED",
+      "seconds": 0.106,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "AT-10: Saturday choices, persistence and all phase transitions",
+      "status": "BLOCKED",
+      "seconds": 0.176,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "Recovery weeks visibly distinguish normal-reference sets from targets",
+      "status": "BLOCKED",
+      "seconds": 0.144,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "AT-04/19: before start, day 140, day 141; history preserved",
+      "status": "BLOCKED",
+      "seconds": 0.163,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "AT-18: 320–1280px, all views; no overflow, >=44px touch targets",
+      "status": "BLOCKED",
+      "seconds": 0.271,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "Backup export contains exact persisted configuration and records",
+      "status": "BLOCKED",
+      "seconds": 0.153,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "Import rejects malformed data; cancellation preserves data; valid restore works",
+      "status": "BLOCKED",
+      "seconds": 0.149,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "Start date change and reset confirmations preserve unrelated configuration",
+      "status": "BLOCKED",
+      "seconds": 0.111,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "Corrupt storage is not overwritten; raw export and backup recovery work",
+      "status": "BLOCKED",
+      "seconds": 0.133,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "Storage failure does not falsely mark Today completed",
+      "status": "BLOCKED",
+      "seconds": 0.146,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "Cross-tab storage events refresh completion state",
+      "status": "BLOCKED",
+      "seconds": 0.134,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "Local UTC+8 midnight refreshes Today on resume",
+      "status": "BLOCKED",
+      "seconds": 0.113,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "AT-01: Chromium installability diagnostics; SW scope under /fitness/",
+      "status": "BLOCKED",
+      "seconds": 0.142,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "AT-17: zero external requests and no console-breaking errors",
+      "status": "BLOCKED",
+      "seconds": 0.139,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "Versioned cache update is explicit and preserves local records / other apps",
+      "status": "BLOCKED",
+      "seconds": 0.159,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "Failed precache update leaves the previous offline app available",
+      "status": "BLOCKED",
+      "seconds": 0.163,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    },
+    {
+      "name": "AT-15/16: full browser restart offline, with static server stopped",
+      "status": "BLOCKED",
+      "seconds": 0.491,
+      "error": "Page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at http://127.0.0.1:46807/fitness/\nCall log:\n  - navigating to \"http://127.0.0.1:46807/fitness/\", waiting until \"load\"\n"
+    }
+  ],
+  "passed": 0,
+  "failed": 0,
+  "not_tested": [
+    "Native Android install and launcher-icon standalone launch",
+    "Native iOS Safari home-screen launch",
+    "Real phone airplane-mode reopen",
+    "User comprehension within 3 seconds"
+  ],
+  "blocked": 21,
+  "reason": "Managed browser policy blocks all URL navigation; Playwright browser installation also failed due DNS EAI_AGAIN. No native offline/installability test passed."
+}

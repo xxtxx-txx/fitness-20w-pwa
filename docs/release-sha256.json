@@ -1,0 +1,18 @@
+{
+  "version": "0.1.0",
+  "files": {
+    ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "app.js": "e4fb45e40daa6f32532402ffa5a511f50624e15acc00305bbe8cac471cf083ba",
+    "date-engine.js": "41aa7eff595b4d37070a4f50ee34d3bcf1441dee909b0f68aedcb8a3c98aa409",
+    "icons/apple-touch-icon.png": "edf790eb3618f082f8e63f6c0dc0ad7069f643c0d9c740069e3b61a8b3b7f436",
+    "icons/icon-192.png": "fbc4a88f11545a6441623588ac25aeb0d9cb83fa7fb6fd98da79fc2589de6a04",
+    "icons/icon-512.png": "2f97c8ced7d7859c12ea08b3e211f0c8ccd27da31510f01f2d033a0cd6274a3a",
+    "icons/maskable-512.png": "2f97c8ced7d7859c12ea08b3e211f0c8ccd27da31510f01f2d033a0cd6274a3a",
+    "index.html": "03aeec7d2e4e4f62b2938637beefcd3b033ceed34b7e7b4083190dc76399e545",
+    "manifest.webmanifest": "9466d633f00a4aed438adb5cb154a36681b3c481c930301266b187cba0dac0ce",
+    "program.js": "b7c71adbc293129634499f0b60169161dfc839acdbcb311cb0ab400c09a240a1",
+    "state.js": "6bc2bfd5cae8b4e706883198980a0885702e09dc9c306c90746aefdf9b4a222c",
+    "styles.css": "a64f67ab3981e5b7c6c7521b928b71ce75899322f0da83c7a0538a0cc5df5c68",
+    "sw.js": "79146da199788dfc6b61f83f87f05ea5b7a0b20a3311b3c2c850d6ed7abfd733"
+  }
+}

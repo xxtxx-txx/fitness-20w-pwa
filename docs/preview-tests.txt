@@ -1,0 +1,10 @@
+PASS UI: first-run form → correct Today, Week 1
+PASS UI: seven weekdays and meal quantities
+PASS UI: completion, Week reflection, deliberate undo (memory double)
+PASS UI: preview separation, future check-off guard, local date resume
+PASS UI: Saturday phase rules and reduced-volume reference labels
+PASS UI: day 140 / day 141 boundary does not restart
+PASS UI: 320–1280px, three views, no overflow, >=44px targets
+PASS UI: settings confirmations preserve history / reset only check-offs
+PASS UI: a failed storage write is not reported as completed
+{"harness": "about:blank, inlined production JS/CSS, in-memory storage double; no network navigation and no native PWA test", "passed": 9, "failed": 0, "native_install_offline_status": "NOT_TESTED"}

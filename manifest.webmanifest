@@ -1,0 +1,18 @@
+{
+  "id": "./",
+  "name": "Fitness",
+  "short_name": "Fitness",
+  "description": "20 周训练与饮食执行面板。今天练什么，今天吃什么。",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "theme_color": "#f5f6f2",
+  "background_color": "#f5f6f2",
+  "prefer_related_applications": false,
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

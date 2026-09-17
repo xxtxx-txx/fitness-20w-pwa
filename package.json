@@ -1,0 +1,13 @@
+{
+  "name": "fitness-20w-pwa",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Zero-runtime-dependency, local-first 20-week Fitness PWA",
+  "scripts": {
+    "start": "node tools/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "build": "node tools/build.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

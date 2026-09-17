@@ -1,0 +1,72 @@
+{
+  "harness": "about:blank, inlined production JS/CSS, in-memory storage double; no network navigation and no native PWA test",
+  "passed": 9,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "UI: first-run form → correct Today, Week 1",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "UI: seven weekdays and meal quantities",
+      "status": "PASS",
+      "detail": "7 weekdays, all raw rice splits, exact 3 / 60 / 250 breakfast"
+    },
+    {
+      "name": "UI: completion, Week reflection, deliberate undo (memory double)",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "UI: preview separation, future check-off guard, local date resume",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "UI: Saturday phase rules and reduced-volume reference labels",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "UI: day 140 / day 141 boundary does not restart",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "UI: 320–1280px, three views, no overflow, >=44px targets",
+      "status": "PASS",
+      "detail": [
+        "320:今天",
+        "320:本周",
+        "320:设置",
+        "360:今天",
+        "360:本周",
+        "360:设置",
+        "390:今天",
+        "390:本周",
+        "390:设置",
+        "412:今天",
+        "412:本周",
+        "412:设置",
+        "768:今天",
+        "768:本周",
+        "768:设置",
+        "1280:今天",
+        "1280:本周",
+        "1280:设置"
+      ]
+    },
+    {
+      "name": "UI: settings confirmations preserve history / reset only check-offs",
+      "status": "PASS",
+      "detail": null
+    },
+    {
+      "name": "UI: a failed storage write is not reported as completed",
+      "status": "PASS",
+      "detail": null
+    }
+  ],
+  "native_install_offline_status": "NOT_TESTED"
+}

@@ -1,0 +1,278 @@
+
+> fitness-20w-pwa@0.1.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: AT-04: day 1 / 7 / 8 / 133 / 134 / 140 are correctly assigned
+ok 1 - AT-04: day 1 / 7 / 8 / 133 / 134 / 140 are correctly assigned
+  ---
+  duration_ms: 2.189171
+  type: 'test'
+  ...
+# Subtest: AT-19: day 141 and later never become Week 1 or Week 21
+ok 2 - AT-19: day 141 and later never become Week 1 or Week 21
+  ---
+  duration_ms: 0.293538
+  type: 'test'
+  ...
+# Subtest: Before the start date is upcoming, not Week 0 or a negative week
+ok 3 - Before the start date is upcoming, not Week 0 or a negative week
+  ---
+  duration_ms: 0.692196
+  type: 'test'
+  ...
+# Subtest: A Wednesday start preserves real weekdays and seven-day program weeks
+ok 4 - A Wednesday start preserves real weekdays and seven-day program weeks
+  ---
+  duration_ms: 0.212273
+  type: 'test'
+  ...
+# Subtest: Dates are validated, including leap days and malformed input
+ok 5 - Dates are validated, including leap days and malformed input
+  ---
+  duration_ms: 0.312169
+  type: 'test'
+  ...
+# Subtest: Leap-day and year boundaries use civil days
+ok 6 - Leap-day and year boundaries use civil days
+  ---
+  duration_ms: 0.150402
+  type: 'test'
+  ...
+# Subtest: All 140 days are covered exactly once by Weeks 1–20
+ok 7 - All 140 days are covered exactly once by Weeks 1–20
+  ---
+  duration_ms: 1.722233
+  type: 'test'
+  ...
+# Subtest: DST and UTC+8: week calculations do not shift with local clock length
+ok 8 - DST and UTC+8: week calculations do not shift with local clock length
+  ---
+  duration_ms: 138.716772
+  type: 'test'
+  ...
+# Subtest: AT-03: local date formatting uses the local calendar, not UTC slicing
+ok 9 - AT-03: local date formatting uses the local calendar, not UTC slicing
+  ---
+  duration_ms: 0.472537
+  type: 'test'
+  ...
+# Subtest: AT-05–11: every weekday has the prescribed workout and raw rice split
+ok 10 - AT-05–11: every weekday has the prescribed workout and raw rice split
+  ---
+  duration_ms: 1.069105
+  type: 'test'
+  ...
+# Subtest: AT-12–14: exact breakfast and raw protein amounts across all days
+ok 11 - AT-12–14: exact breakfast and raw protein amounts across all days
+  ---
+  duration_ms: 0.954257
+  type: 'test'
+  ...
+# Subtest: AT-10: all Saturday phase boundaries, optional MRT never auto-selected
+ok 12 - AT-10: all Saturday phase boundaries, optional MRT never auto-selected
+  ---
+  duration_ms: 0.217653
+  type: 'test'
+  ...
+# Subtest: Deadlift is never transformed into MRT in any active training week
+ok 13 - Deadlift is never transformed into MRT in any active training week
+  ---
+  duration_ms: 0.131987
+  type: 'test'
+  ...
+# Subtest: Phase, reduced-volume and assessment boundaries are explicit
+ok 14 - Phase, reduced-volume and assessment boundaries are explicit
+  ---
+  duration_ms: 0.288329
+  type: 'test'
+  ...
+# Subtest: Optional top/back-off progression is not forced; W13 heavier main lifts use 4–6
+ok 15 - Optional top/back-off progression is not forced; W13 heavier main lifts use 4–6
+  ---
+  duration_ms: 0.097259
+  type: 'test'
+  ...
+# Subtest: Program data does not mutate while deriving any of 140 daily plans
+ok 16 - Program data does not mutate while deriving any of 140 daily plans
+  ---
+  duration_ms: 2.429064
+  type: 'test'
+  ...
+# Subtest: No automatic rice substitution after W9; no shrimp; no invented milk macros
+ok 17 - No automatic rice substitution after W9; no shrimp; no invented milk macros
+  ---
+  duration_ms: 1.405913
+  type: 'test'
+  ...
+# Subtest: Upcoming is labelled preview; complete has no new prescription
+ok 18 - Upcoming is labelled preview; complete has no new prescription
+  ---
+  duration_ms: 0.299102
+  type: 'test'
+  ...
+# Subtest: MRT is stored per date and remains ineffective outside allowed phases
+ok 19 - MRT is stored per date and remains ineffective outside allowed phases
+  ---
+  duration_ms: 0.31228
+  type: 'test'
+  ...
+# Subtest: Minimum Mode remains an unexposed, disabled extension
+ok 20 - Minimum Mode remains an unexposed, disabled extension
+  ---
+  duration_ms: 0.113321
+  type: 'test'
+  ...
+# Subtest: Static server: root HTML, module MIME and manifest respond correctly
+ok 21 - Static server: root HTML, module MIME and manifest respond correctly
+  ---
+  duration_ms: 120.801608
+  type: 'test'
+  ...
+# Subtest: Static server: repository sub-path serves all app-shell files and icons
+ok 22 - Static server: repository sub-path serves all app-shell files and icons
+  ---
+  duration_ms: 99.09865
+  type: 'test'
+  ...
+# Subtest: SW harness: one atomic precache request includes every critical asset
+ok 23 - SW harness: one atomic precache request includes every critical asset
+  ---
+  duration_ms: 23.353272
+  type: 'test'
+  ...
+# Subtest: SW harness: navigation returns the cached app shell without fetching
+ok 24 - SW harness: navigation returns the cached app shell without fetching
+  ---
+  duration_ms: 3.046798
+  type: 'test'
+  ...
+# Subtest: SW harness: static modules and icons are served from this release cache
+ok 25 - SW harness: static modules and icons are served from this release cache
+  ---
+  duration_ms: 3.351226
+  type: 'test'
+  ...
+# Subtest: SW harness: other origins, other scopes and non-GET requests are untouched
+ok 26 - SW harness: other origins, other scopes and non-GET requests are untouched
+  ---
+  duration_ms: 1.499433
+  type: 'test'
+  ...
+# Subtest: SW harness: activation deletes only old caches belonging to this exact scope
+ok 27 - SW harness: activation deletes only old caches belonging to this exact scope
+  ---
+  duration_ms: 5.237535
+  type: 'test'
+  ...
+# Subtest: SW harness: update activation requires the explicit message
+ok 28 - SW harness: update activation requires the explicit message
+  ---
+  duration_ms: 0.931531
+  type: 'test'
+  ...
+# Subtest: SW harness: failed precache propagates rejection and never activates itself
+ok 29 - SW harness: failed precache propagates rejection and never activates itself
+  ---
+  duration_ms: 1.793438
+  type: 'test'
+  ...
+# Subtest: AT-16: config and completion persist across store instances
+ok 30 - AT-16: config and completion persist across store instances
+  ---
+  duration_ms: 2.426928
+  type: 'test'
+  ...
+# Subtest: Backup round-trip retains schema, config, completion and future JSON user data
+ok 31 - Backup round-trip retains schema, config, completion and future JSON user data
+  ---
+  duration_ms: 0.858938
+  type: 'test'
+  ...
+# Subtest: Malformed, wrong-schema and bad dates are rejected
+ok 32 - Malformed, wrong-schema and bad dates are rejected
+  ---
+  duration_ms: 0.309971
+  type: 'test'
+  ...
+# Subtest: Unknown top-level controls, dangerous keys and malformed completions are rejected
+ok 33 - Unknown top-level controls, dangerous keys and malformed completions are rejected
+  ---
+  duration_ms: 0.389537
+  type: 'test'
+  ...
+# Subtest: Invalid weights and incompatible carb settings are rejected
+ok 34 - Invalid weights and incompatible carb settings are rejected
+  ---
+  duration_ms: 0.227562
+  type: 'test'
+  ...
+# Subtest: Oversized import is rejected without writing anything
+ok 35 - Oversized import is rejected without writing anything
+  ---
+  duration_ms: 1.104217
+  type: 'test'
+  ...
+# Subtest: Failed write is not reported as saved; original state survives
+ok 36 - Failed write is not reported as saved; original state survives
+  ---
+  duration_ms: 0.368069
+  type: 'test'
+  ...
+# Subtest: Corrupt existing storage is preserved and does not silently become fresh setup
+ok 37 - Corrupt existing storage is preserved and does not silently become fresh setup
+  ---
+  duration_ms: 0.150419
+  type: 'test'
+  ...
+# Subtest: Reset completion and start-date edits do not mutate unrelated data
+ok 38 - Reset completion and start-date edits do not mutate unrelated data
+  ---
+  duration_ms: 0.4109
+  type: 'test'
+  ...
+# Subtest: Empty settings baseline from AWC is accepted and normalized
+ok 39 - Empty settings baseline from AWC is accepted and normalized
+  ---
+  duration_ms: 0.369076
+  type: 'test'
+  ...
+# Subtest: Invalid or object-valued MRT choices are rejected
+ok 40 - Invalid or object-valued MRT choices are rejected
+  ---
+  duration_ms: 0.231051
+  type: 'test'
+  ...
+# Subtest: AT-01/02 prerequisites: manifest fields, relative scope and valid PNG dimensions
+ok 41 - AT-01/02 prerequisites: manifest fields, relative scope and valid PNG dimensions
+  ---
+  duration_ms: 1.359859
+  type: 'test'
+  ...
+# Subtest: AT-17: application assets do not load external services or CDN dependencies
+ok 42 - AT-17: application assets do not load external services or CDN dependencies
+  ---
+  duration_ms: 2.404027
+  type: 'test'
+  ...
+# Subtest: Sub-path safe static asset and manifest references
+ok 43 - Sub-path safe static asset and manifest references
+  ---
+  duration_ms: 0.421199
+  type: 'test'
+  ...
+# Subtest: Release cache is versioned, scope-isolated and install is atomic
+ok 44 - Release cache is versioned, scope-isolated and install is atomic
+  ---
+  duration_ms: 0.237069
+  type: 'test'
+  ...
+1..44
+# tests 44
+# suites 0
+# pass 44
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 275.688018

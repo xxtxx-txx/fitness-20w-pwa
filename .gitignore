@@ -1,0 +1,7 @@
+node_modules/
+dist/
+__pycache__/
+.playwright/
+.DS_Store
+*.log
+fitness-backup-*.json
